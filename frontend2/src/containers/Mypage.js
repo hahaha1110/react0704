@@ -21,7 +21,7 @@ class Mypage extends Component{
                 <Table striped bordered hover>
                     <tbody>
                         <tr>
-                            <td rowSpan='2' colSpan='2'>1</td>
+                            <td rowSpan='2'>1</td>
                             <td>ID</td>
                             <td>hong</td>
                         </tr>
@@ -31,11 +31,11 @@ class Mypage extends Component{
                         </tr>
                         <tr>
                             <td>전화번호</td>
-                            <td colSpan='3'>010-1234-5678</td>
+                            <td colSpan='2'>010-1234-5678</td>
                         </tr>
                         <tr>
                             <td>주소(도시)</td>
-                            <td colSpan='3'>서울</td>
+                            <td colSpan='2'>서울</td>
                         </tr>
                     </tbody>
                 </Table>
