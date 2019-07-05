@@ -7,21 +7,23 @@ class Mypage extends Component{
         return(
             <div>
                 <h2> 마이페이지 </h2>
-                <Figure>
-                    <Figure.Image
-                        width={171}
-                        height={180}
-                        alt="171x180"
-                        src={logo}
-                    />
-                    <Figure.Caption>
-                        Nulla vitae elit libero, a pharetra augue mollis interdum.
-                    </Figure.Caption>
-                </Figure>
+                
                 <Table striped bordered hover>
                     <tbody>
                         <tr>
-                            <td rowSpan='2'>1</td>
+                            <td rowSpan='2'>
+                            <Figure>
+                                <Figure.Image
+                                    width={171}
+                                    height={180}
+                                    alt="171x180"
+                                    src={logo}
+                                />
+                                <Figure.Caption>
+                                    Nulla vitae elit libero, a pharetra augue mollis interdum.
+                                </Figure.Caption>
+                            </Figure>
+                            </td>
                             <td>ID</td>
                             <td>hong</td>
                         </tr>
