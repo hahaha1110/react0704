@@ -23,10 +23,10 @@ class Mypage extends Component{
                         <tr>
                             <td rowSpan='2' colSpan='2'>1</td>
                             <td>ID</td>
-                            <td>이름</td>
+                            <td>hong</td>
                         </tr>
                         <tr>
-                            <td>hong</td>
+                            <td>이름</td>
                             <td>홍길동</td>
                         </tr>
                         <tr>
