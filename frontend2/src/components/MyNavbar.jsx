@@ -1,10 +1,11 @@
 import React from 'react'
 import {Navbar,Nav,NavDropdown,Form,FormControl,Button} from 'react-bootstrap'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Login from '../containers/Login';
-import Join from '../containers/Join';
-import Mypage from '../containers/Mypage';
-import Home from '../containers/Home';
+import Login from '../containers/customer/Login.jsx';
+import Join from '../containers/customer/Join.jsx';
+import Mypage from '../containers/customer/Mypage.jsx';
+import Home from '../containers/Home.jsx';
+import Hello from '../containers/customer/Hello.jsx';
 
 const MyNavbar = () =>{
     return (
@@ -18,6 +19,9 @@ const MyNavbar = () =>{
           <Link to="/home"> Home</Link>
           </Nav.Link>
           <Nav.Link href="#link">스케줄러</Nav.Link>
+          <Nav.Link href="#link">
+            <Link to="/hello">Hello</Link>
+          </Nav.Link>
           <NavDropdown title="회원관리" id="basic-nav-dropdown">
             <NavDropdown.Item href="#">
               <Link to="/join">회원가입</Link>
@@ -44,6 +48,7 @@ const MyNavbar = () =>{
     <Route path="/join" component={Join}/>
     <Route path="/mypage" component={Mypage}/>
     <Route path="/home" component={Home}/>
+    <Route path="/hello" component={Hello}/>
     </Router>
     )
 }

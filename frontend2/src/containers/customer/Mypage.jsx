@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import {Figure,Table} from 'react-bootstrap';
-import logo from '../assets/images/logo.svg'
+import logo from '../../assets/images/logo.svg'
 
 class Mypage extends Component{
     render(){
