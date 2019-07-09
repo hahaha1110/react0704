@@ -31,7 +31,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.beans.BeanUtils;
 
 
-@CrossOrigin(origins = "http://localhost:8080", maxAge = 3600)
+@CrossOrigin(origins = "http://localhost:3000", maxAge = 3600)
 @RestController
 @RequestMapping("/customers")
 public class CustomerController {
@@ -154,7 +154,8 @@ public class CustomerController {
     public CustomerDTO login(@RequestBody CustomerDTO dto){//보안때매 String으로 받으면 안됨
         System.out.println("------------------------------------------login()");
         //syso로 찍어버리면 상태를 주게 됨 찍지말기..
-        // System.out.println(dto.getCustomerId().toString());
+        System.out.println(dto.getCustomerId().toString());
+        System.out.println(dto.getPassword().toString());
         //리턴에서 dto.get~~하면 찍어볼 수 없으므로 이렇게
         //서비스에 있는거 전부 람다처리 가능
         ISupplier fx = ()->{//오토와이어드 걸면 안됨 메소드 밖에서 상태를 keep하면 안된다
