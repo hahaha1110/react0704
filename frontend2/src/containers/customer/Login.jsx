@@ -4,10 +4,15 @@ import axios from 'axios'
 
 class Login extends Component{
     
-        state = {
+    constructor(props){
+        super(props)
+        this.state = {
             customerId : '',
             password   : ''
         }
+    }
+
+        
     
     render(){
         return(
@@ -24,6 +29,7 @@ class Login extends Component{
                         <input type="text" name="password" onChange = {this.pwChange}/>
                         {/* <Form.Control type="password" placeholder="Password"/> */}
                     </Form.Group>
+                    <input type="submit" onClick={this.login} value="테스트"/>
                     <Button variant="success" onClick={this.login}>전 송</Button>
                     <Button variant="danger">취 소</Button>
                 </Form>   
@@ -31,20 +37,26 @@ class Login extends Component{
             </div>
         );
     }
-    idChange = (e) =>{
+    idChange = e =>{
         this.setState({customerId : e.target.value})
     }
-    pwChange = (e) =>{
+    pwChange = e =>{
         this.setState({password : e.target.value})
     }
     
-    login = (e) => {
+    login = e => {
         e.preventDefault()
 
+        this.setState({submitted : true})
+        const {customerId, password} = this.state
+        console.log(`customerId is ${customerId}`)
+        console.log(`password is ${password}`)
+        
         const data = {
             customerId : this.state.customerId,
             password   : this.state.password        
         }
+        
         const headers = {
             'Content-Type': 'application/json',
             'Authorization' : 'JWT fefege..'
