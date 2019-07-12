@@ -1,6 +1,7 @@
 package com.bitcamp.web.entities;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.*;
 
@@ -35,6 +36,11 @@ public class Customer implements Serializable {
     @Column(name="postalcode") private String postalcode;
     @Column(name="photo") private String photo;
     
+    @OneToMany(cascade = CascadeType.ALL,
+                fetch = FetchType.EAGER)
+    @JoinColumn(name   = "customer")
+    private List<MemberRole> roles;
+
     @Override
     public String toString(){
         return "Customer :[id:"+id+",customerId:" +customerId+", customerName:"+customerName+", password:"+password+", ssn:"+ssn+
@@ -45,14 +51,14 @@ public class Customer implements Serializable {
     private Customer(String customerId,String customerName,
     String password,String ssn,String phone,String city,
     String address,String postalcode,String photo){
-        this.customerId = customerId;
+        this.customerId   = customerId;
         this.customerName = customerName;
-        this.password = password;
-        this.ssn = ssn;
-        this.phone = phone;
-        this.city = city;
-        this.address = address;
-        this.postalcode = postalcode;
-        this.photo = photo;
+        this.password     = password;
+        this.ssn          = ssn;
+        this.phone        = phone;
+        this.city         = city;
+        this.address      = address;
+        this.postalcode   = postalcode;
+        this.photo        = photo;
     }
 }
